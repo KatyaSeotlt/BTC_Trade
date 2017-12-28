@@ -1,0 +1,373 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#ffffff;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:14pt;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+/* Portrait layout (default) */
+.app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    background-size: contain;
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+h1 {
+    font-size:26pt;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:14pt;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.waiting {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+.logo-container{
+  width: 100%;
+  text-align: center;
+  background-color:#ffffff;
+  border-radius: 3px;
+  padding: 10px;
+  margin-top:20px;
+}
+div {
+  box-sizing: border-box;
+}
+.logo {
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 100px;
+  height:74px;
+}
+.name-field{
+ color: #1e1e1e;
+ font-size: 13pt;
+}
+.name-field.error-text{
+  color: #f04a52;
+ }
+.form-container{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.input-field input{
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  border: 0px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  border-bottom: 1px solid #b8b8b8;
+  font-size: 14pt;
+}
+.input-field select{
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  border: 0px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #b8b8b8;
+  font-size: 14pt;
+}
+.buttons {
+ background-color:  #6ca339;
+ border: none;
+ width: 100%;
+ margin-bottom: 20px;
+ height: 40px;
+ border-radius: 3px;
+ text-align: center;
+ color: #fff;
+ line-height: 16px;
+ font-size: 16pt;
+}
+.buttons img{
+  margin-top: 2px;
+  position: absolute;
+  margin-left: 8px;
+}
+.marginTop-100{
+  margin-top: 100px;
+}
+.logo-name {
+ height:35px;
+}
+ #page-signals{
+  background-color: #67c763;
+  padding: 10px;
+}
+body.open{
+  background-color: #67c763;
+}
+.arrowRight {
+   width: 10px;
+   height:10px;
+   margin-left: 5px;
+   margin-top: 3px;
+}
+ .signalblock {
+   background-color: #ffffff;
+   border-radius: 3px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   margin: 3px 0px;
+   width: 100%;
+   flex: 1;
+   flex-direction: column;
+   justify-content: center;
+   align-items: stretch;
+   }
+   .signalblock:hover, .signalblock:active, .signalblock:focus {
+     background-color: #e4f5e3;
+   }
+ .signalContainer{
+   align-items: 'stretch';
+ }
+ .signalblockDetail{
+   background-color: #ffffff;
+   border-radius: 3px;
+   padding-top: 10px;
+   padding-bottom: 80px;
+   margin: 3px;
+   width: 330px;
+   height: 400px;
+   flex-direction: column;
+   align-items: stretch;
+   display: block;
+   }
+
+ .namePage{
+   text-align: center;
+   height: 50px;
+   justify-content: center;
+   width: 540px;
+   background-color: #ffffff;
+   margin-bottom: 3px;
+   margin-top: 10px;
+   padding-left: 0px;
+   }
+ .namePageText {
+   font-size: 29pt;
+   color: #ffffff;
+
+   }
+ .textLine1{
+   display: flex;
+   border-bottom: 1px solid #67c763;
+   flex: 1;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: center;
+   padding-bottom: 10px;
+   padding-left: 10px;
+   }
+  .nodata {
+   background-color: #e4f5e3;
+   border-radius: 5px;
+   padding: 10px;
+   margin: 10px 0px;
+   width: 100%;
+   }
+  .timeLines{
+    padding: 10px;
+    padding-bottom: 10px;
+    flex: 1;
+    flex-direction: row;
+    justify-content: flex-start;
+    display: flex;
+   }
+   .timeLinesDetail{
+   display: flex;
+   padding: 10;
+   padding-bottom: 15px;
+   flex: 1;
+   flex-direction: row;
+   justify-content: flex-start;
+   }
+  .dates {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+   }
+   .times{
+   display: flex;
+   flex: 1;
+   flex-direction: row;
+   align-items: center;
+   }
+  .openPosition{
+   display: flex;
+   padding-left: 10px;
+   padding-bottom: 10px;
+   flex: 1;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: center;
+   }
+   .shareicons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    padding-top: 10px;
+   }
+   .shareicon {
+    margin-right: 10px;
+    height: 40px;
+    width: 40px;
+   }
+  .tiker{
+   color: #000000;
+   padding-top: 3px;
+   padding-left: 10px;
+   padding-bottom: 10px;
+   font-weight: bold;
+   }
+   .price{
+   padding-left: 10px;
+   }
+   .litetext{
+    color:#1e1e1e;
+    font-size: 14pt;
+   }
+   .greentext{
+    color:#85cf80;
+    font-size: 15pt;
+    font-weight: bold;
+    padding-left: 5px;
+   }
+   .redtext {
+    color: #f04a52;
+    font-size: 16pt;
+    fontWeight: bold;
+    padding-left: 5px;
+   }
+   .blueRound {
+   background-color: #4ab5ec;
+   border-radius: 13px;
+   height: 13px;
+   width: 13px;
+   margin-right: 5px;
+   }
+   .imgStyle{
+     width: 15px;
+     height: 14px;
+     margin-right: 5px;
+     }
+    .imgStyleTime {
+     margin-left: 18px;
+     width: 15px;
+     height: 14px;
+     margin-right: 5px;
+     }
+   .imgStyleArrow{
+     width: 8px;
+     height: 12px;
+     margin-left: 1px;
+     }
+    .normalText{
+      color: #1e1e1e;
+      font-size: 13pt;
+      padding-left: 4px;
+     }
+    .errorText{
+      font-size: 13pt;
+      color: #f04a52;
+      padding-left: 4px;
+     }
+    .normalTextBig{
+      color: #1e1e1e;
+      font-size: 14pt;
+     }
+    .normalTextBigEMitent{
+      font-weight: bold;
+      color: #1e1e1e;
+      font-size: 16pt;
+     }
+   .normalTextBigName{
+     font-size: 18pt;
+     }
+   .inputLogin {
+     height: 40px;
+     font-size: 18pt;
+     margin-bottom:10px;
+     padding-bottom: 8px;
+     padding-left: 4px;
+    }
+    .detail{
+      display: none;
+    }
+    .showDetail .detail {
+      display: flex;
+    }
+    .signal-container .signalblock.showDetail {
+      height: 100%;
+      min-height:500px;
+    }
