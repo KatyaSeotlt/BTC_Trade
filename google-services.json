@@ -191,6 +191,37 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460180288949:android:25275f75021ecafc",
+        "android_client_info": {
+          "package_name": "com.btctrader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "460180288949-91tt8k6ido562nqanv448s7h0knol3ai.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkeQnk4QZdWTKS-PTo1FnUtQtQqhh-Yw8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"

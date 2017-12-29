@@ -126,7 +126,7 @@ var app = {
     showDetail: function(id){
       if(app.detail==false){
         app.detail=true;
-      $('.signalblock').hide();
+      //$('.signalblock').hide();
       $('#signal'+id).addClass('showDetail');
       $('#signal'+id).show();
       $('#signal'+id+' textLine1 span').removeClass('blueRound');
@@ -179,7 +179,7 @@ var app = {
 
 
                       if(!app.isLocal('signal'+jsonData.signals[i].id)){showSignalsCircle='blueRound';}
-                      html=html+'<div class="signalblock" id="signal'+jsonData.signals[i].id+'" onclick="app.showDetail('+jsonData.signals[i].id+')">'
+                    /*  html=html+'<div class="signalblock" id="signal'+jsonData.signals[i].id+'">'
                       +'<div class="textLine1"><span class="'+showSignalsCircle+'"></span>'+jsonData.signals[i].doit+' позицию</div>'
                       +'<div class="timeLines">'
                         +'<div class="dates"><img src="img/calendar.png" class="imgStyle"/><span class="normalTextBig">'+jsonData.signals[i].dates+'</span> </div>'
@@ -197,7 +197,23 @@ var app = {
                       +'<div class="shareicons"><a href="'+twurl+'" target="_system" data-rel="external"><img src="img/tw.png" class="shareicon"/></a></div>'
                       +'<div class="shareicons"><a href="'+okurl+'" target="_system" data-rel="external"><img src="img/ok.png" class="shareicon"/></a></div>'
                       +'</div>'
-                      +'</div>';
+                      +'</div>';*/
+                      html=html+'<div class="signalblock" id="signal'+jsonData.signals[i].id+'" onclick="app.showDetail('+jsonData.signals[i].id+')">'
+                       +'<div class="textLine1">'+jsonData.signals[i].doit+'&nbsp;&nbsp;<div class="normalTextBigEMitent"> '+jsonData.signals[i].name+'</div>'
+                       +' <div class="'+color_type+'">'+jsonData.signals[i].type+'</div><img src="'+arrow_type+'" class="imgStyleArrow"/>  </div>'
+
+                       +'<div class="detail timeLines">'
+                         +'<div class="dates"><img src="img/calendar.png" class="imgStyle"/><span class="normalTextBig">'+jsonData.signals[i].dates+'</span> </div>'
+                         +'<div class="dates"><img src="img/time.png" class="imgStyle"/><span class="normalTextBig">'+jsonData.signals[i].times+'</span> </div>'
+                       +'</div>'
+                       + '<div class=" detail openPosition"><span class="normalTextBig">'+jsonData.signals[i].doit+' позицию </span>'
+                       + '<div class=" detail '+color_type+'">'+jsonData.signals[i].type+'</div><img src="'+arrow_type+'" class="imgStyleArrow"/></div>'
+                       + '<div class=" detail price"><div class="litetext">Криптовалютная пара</div></div>'
+                       + '<div class=" detail tiker"><div class="normalTextBigEMitent">'+jsonData.signals[i].name+'</div></div>'
+                       + '<div class="detail price"><div class="litetext">Рекомендованная цена</div></div>'
+                       + '<div class="detail tiker"><div class="normalTextBig">'+jsonData.signals[i].price+'</div></div>'
+
+                       +'</div>';
                     }
                     if(html==''){
                       html='<div class="nodata"><div class="normalTextBig">Сигналов не обнаружено</div></div>';
