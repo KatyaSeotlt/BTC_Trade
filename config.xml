@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.btctrader" version="1.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>sgacryptotrading</name>
+    <name>BTC Trader</name>
     <description>
-       sgacryptotrading
+       BTC Trader
     </description>
     <author email="info@sga.com.ru" href="http://sga.com.ru">
         SGA
